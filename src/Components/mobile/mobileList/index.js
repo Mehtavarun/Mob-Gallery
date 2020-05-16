@@ -1,5 +1,6 @@
 import React from 'react';
 import MobileCard from './mobileCard';
+import Pagination from './pagination';
 
 function MobileList() {
   return (
@@ -25,6 +26,7 @@ function MobileList() {
         </div>
       </div>
       <MobileCard />
+      <Pagination />
     </div>
   );
 }
