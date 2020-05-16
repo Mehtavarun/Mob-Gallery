@@ -34,7 +34,7 @@ function CartItem() {
         <h5>$1000.44</h5>
       </div>
       <div className="col-1">
-        <img className="binImg" src={binImg} height="20" width="20" />
+        <img className="addPointer" src={binImg} height="20" width="20" />
       </div>
     </div>
   );
