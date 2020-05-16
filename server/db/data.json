@@ -18,7 +18,17 @@
       "price": 1200,
       "currency": "$",
       "image": "Apple-iPhone-11-Pro-Silver-64-GB.jpg",
-      "quantity": 2
+      "quantity": 2,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 2,
@@ -26,7 +36,17 @@
       "price": 800,
       "currency": "$",
       "image": "apple-iphone-xr.jpeg",
-      "quantity": 10
+      "quantity": 10,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 3,
@@ -34,7 +54,17 @@
       "price": 249.99,
       "currency": "$",
       "image": "galaxy-m31.jpg",
-      "quantity": 2
+      "quantity": 2,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 4,
@@ -42,7 +72,17 @@
       "price": 290.0,
       "currency": "$",
       "image": "in-galaxy-a10s.jpg",
-      "quantity": 3
+      "quantity": 3,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 5,
@@ -50,7 +90,17 @@
       "price": 290.0,
       "currency": "$",
       "image": "in-galaxy-m21.jpg",
-      "quantity": 4
+      "quantity": 4,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 6,
@@ -58,7 +108,17 @@
       "price": 900,
       "currency": "$",
       "image": "in-galaxy-note10.jpg",
-      "quantity": 1
+      "quantity": 1,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 7,
@@ -66,7 +126,17 @@
       "price": 800,
       "currency": "$",
       "image": "in-galaxy-s9.jpg",
-      "quantity": 1
+      "quantity": 1,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 8,
@@ -74,7 +144,17 @@
       "price": 1440.00,
       "currency": "$",
       "image": "iphone-11-256-green.jpeg",
-      "quantity": 4
+      "quantity": 4,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 9,
@@ -82,7 +162,17 @@
       "price": 790,
       "currency": "$",
       "image": "oneplus-7t.jpeg",
-      "quantity": 4
+      "quantity": 4,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 10,
@@ -90,7 +180,17 @@
       "price": 950.50,
       "currency": "$",
       "image": "oneplus-8-pro-header.jpg",
-      "quantity": 2
+      "quantity": 2,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 11,
@@ -98,7 +198,17 @@
       "price": 500,
       "currency": "$",
       "image": "oppo-a9.jpg",
-      "quantity": 1
+      "quantity": 1,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 12,
@@ -106,7 +216,17 @@
       "price": 450,
       "currency": "$",
       "image": "poco-x2.jpeg",
-      "quantity": 7
+      "quantity": 7,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 13,
@@ -114,7 +234,17 @@
       "price": 300,
       "currency": "$",
       "image": "realme-5.jpg",
-      "quantity": 6
+      "quantity": 6,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 14,
@@ -122,7 +252,17 @@
       "price": 205,
       "currency": "$",
       "image": "redmi-k20-pro.jpeg",
-      "quantity": 3
+      "quantity": 3,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 15,
@@ -130,7 +270,17 @@
       "price": 340,
       "currency": "$",
       "image": "redmi-note-8-pro.jpeg",
-      "quantity": 2
+      "quantity": 2,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 16,
@@ -138,7 +288,17 @@
       "price": 190,
       "currency": "$",
       "image": "samsung-galaxy-a10.jpeg",
-      "quantity": 10
+      "quantity": 10,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     },
     {
       "id": 17,
@@ -146,7 +306,17 @@
       "price": 421.30,
       "currency": "$",
       "image": "Vivo-X30-5G.jpg",
-      "quantity": 4
+      "quantity": 4,
+      "specifications": [
+        "64GB Internal Memory",
+          "8GB RAM",
+          "6.7-inch HD Retina display",
+          "12MP camera with 1080p video and 4.2MP HD camera",
+          "Up to 10 hours of battery life",
+          "Two speaker audio",
+          "Lightning connector for charging and accessories",
+          "802.11ac Wi-Fi with MIMO"
+      ]
     }
   ]
 }
