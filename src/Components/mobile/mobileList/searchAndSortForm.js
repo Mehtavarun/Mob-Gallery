@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 function SearchAndSortForm(props) {
   const [showSortDropdown, toggleSortDropdown] = useState(false);
+  const [searchText, setSearchText] = useState('');
   const ref = useRef(false);
   const orderDropdown = {
     asc: 'Low to High',
@@ -28,6 +29,11 @@ function SearchAndSortForm(props) {
     props.handleOrder(order);
   }
 
+  function searchList({ value }) {
+    setSearchText(value);
+    props.handleSearchText(value);
+  }
+
   return (
     <div className="row mt-4">
       <div className="col-3"></div>
@@ -38,7 +44,9 @@ function SearchAndSortForm(props) {
             style={{ width: '400px' }}
             type="search"
             placeholder="Search"
+            value={searchText}
             aria-label="Search"
+            onChange={e => searchList(e.target)}
           />
           <button
             className="btn btn-outline-success my-2 my-sm-0"
