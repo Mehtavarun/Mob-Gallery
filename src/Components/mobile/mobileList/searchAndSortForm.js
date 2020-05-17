@@ -1,6 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-function SearchAndSortForm() {
+function SearchAndSortForm(props) {
+  const [showSortDropdown, toggleSortDropdown] = useState(false);
+  const ref = useRef(false);
+  const orderDropdown = {
+    asc: 'Low to High',
+    desc: 'High to Low'
+  };
+  const [order, setOrder] = useState(props.order);
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  function handleClickOutside(event) {
+    if (ref.current && !ref.current.contains(event.target)) {
+      toggleSortDropdown(false);
+    }
+  }
+
+  function handleOrder(order) {
+    setOrder(order);
+    toggleSortDropdown(false);
+    props.handleOrder(order);
+  }
+
   return (
     <div className="row mt-4">
       <div className="col-3"></div>
@@ -22,7 +49,7 @@ function SearchAndSortForm() {
         </form>
       </div>
       <div className="col-3">
-        <div className="dropdown">
+        <div className="dropdown" ref={ref}>
           <button
             className="btn btn-light border dropdown-toggle"
             type="button"
@@ -30,22 +57,28 @@ function SearchAndSortForm() {
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
+            onClick={() => toggleSortDropdown(!showSortDropdown)}
           >
-            Dropdown button
+            {orderDropdown[order]}
           </button>
           <div
-            className="dropdown-menu d-block"
+            className={`dropdown-menu ${showSortDropdown && 'd-block'}`}
             aria-labelledby="dropdownMenuButton"
           >
-            <a className="dropdown-item" href="#">
-              Action
-            </a>
-            <a className="dropdown-item" href="#">
-              Another action
-            </a>
-            <a className="dropdown-item" href="#">
-              Something else here
-            </a>
+            <button
+              className="dropdown-item"
+              tpye="button"
+              onClick={() => handleOrder('asc')}
+            >
+              {orderDropdown.asc}
+            </button>
+            <button
+              className="dropdown-item"
+              tpye="button"
+              onClick={() => handleOrder('desc')}
+            >
+              {orderDropdown.desc}
+            </button>
           </div>
         </div>
       </div>

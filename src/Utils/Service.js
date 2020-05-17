@@ -23,8 +23,6 @@ async function getResponse(res) {
   const body = await res.json();
   return {
     status: res.status,
-    body: {
-      ...body
-    }
+    body
   };
 }
