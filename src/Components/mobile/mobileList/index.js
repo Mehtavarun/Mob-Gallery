@@ -5,25 +5,31 @@ import SearchAndSortForm from './searchAndSortForm';
 import { request } from '../../../Utils/Service';
 import useDebounce from '../../../Utils/debounce';
 
-function MobileList() {
+function MobileList(props) {
   const [mobiles, setMobiles] = useState([]);
   const [order, setOrder] = useState('asc');
   const [searchText, setSearchText] = useState('');
+  const [count, setCount] = useState(0);
   const debouncedSearchText = useDebounce(searchText, 500);
+  const urlParams = new URLSearchParams(window.location.search);
+  const pageParam = urlParams.get('page');
+  let page = pageParam ? Number(pageParam) : 1;
 
   useEffect(() => {
+    page = pageParam ? Number(pageParam) : 1;
     if (debouncedSearchText) {
       setMobileList(debouncedSearchText);
     } else {
       setMobileList();
     }
-  }, [order, debouncedSearchText]);
+  }, [order, debouncedSearchText, window.location.search]);
 
   async function setMobileList(searchText = '') {
     const mobileList = await request(
       'GET',
-      `/mobiles?_page=1&_limit=10&_sort=price&_order=${order}&q=${searchText}`
+      `/mobiles?_page=${page}&_limit=10&_sort=price&_order=${order}&q=${searchText}`
     );
+    setCount(mobileList.count);
     setMobiles(mobileList.body);
   }
 
@@ -47,7 +53,7 @@ function MobileList() {
           return <MobileCard key={mobile.id} mobile={mobile} />;
         })}
       </div>
-      <Pagination />
+      <Pagination count={count} activePage={page} />
     </div>
   );
 }

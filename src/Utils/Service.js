@@ -14,15 +14,21 @@ function getHttpConfig(method, body) {
 
 function getRequestHeaders() {
   let headers = {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Access-Control-Expose-Headers': 'X-Total-Count'
   };
   return headers;
 }
 
 async function getResponse(res) {
-  const body = await res.json();
-  return {
-    status: res.status,
-    body
-  };
+  if (res.ok) {
+    const body = await res.json();
+    return {
+      status: res.status,
+      body,
+      count: res.headers.get('x-total-count')
+    };
+  } else {
+    alert('Server error: ' + res.status);
+  }
 }

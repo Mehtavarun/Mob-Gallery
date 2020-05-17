@@ -26,7 +26,11 @@ function Routes() {
         <Redirect exact from="/" to="/mobile-phones" />
         <Route exact path="/login" render={props => <Login />} />
         <Route exact path="/logout" render={() => <Logout />} />
-        <Route exact path="/mobile-phones" render={() => <MobileList />} />
+        <Route
+          exact
+          path="/mobile-phones"
+          render={props => <MobileList location={props.location} />}
+        />
         <Route exact path="/mobile/:id" render={() => <MobileDetails />} />
         <AuthenticatedRoute
           exact
