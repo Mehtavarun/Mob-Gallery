@@ -14,7 +14,7 @@ function MobileCard() {
       >
         <img
           src={img}
-          class="card-img-top ml-5"
+          className="card-img-top ml-5"
           alt="mobile-name"
           style={{ height: '18.5rem', width: '9.5rem', margin: '0rem' }}
         />

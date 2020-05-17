@@ -18,7 +18,7 @@ function CartItem() {
         <h5>$1000</h5>
       </div>
       <div className="col-2">
-        <div class="btn-group" role="group" aria-label="quantity">
+        <div className="btn-group" role="group" aria-label="quantity">
           <button type="button" className="btn btn-secondary">
             -
           </button>

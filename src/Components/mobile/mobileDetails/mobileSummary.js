@@ -3,12 +3,12 @@ import img from '../../../assets/images/Apple-iPhone-11-Pro-Silver-64-GB.jpg';
 
 function MobileSummary() {
   return (
-    <div class="row justify-content-center mt-5 align-items-center">
-      <div class="col-md-4 text-center sticky-top">
+    <div className="row justify-content-center mt-5 align-items-center">
+      <div className="col-md-4 text-center sticky-top">
         <img src={img} height="400" alt="image-name" />
       </div>
       <div
-        class="col-md-6 text-break text-monospace"
+        className="col-md-6 text-break text-monospace"
         style={{ height: '440px' }}
       >
         <h1>Iphone 11</h1>
@@ -40,7 +40,7 @@ function MobileSummary() {
           <li>802.11ac Wi-Fi with MIMO</li>
         </ul>
       </div>
-      <div class="col-md-2 text-center sticky-top">
+      <div className="col-md-2 text-center sticky-top">
         <a href="#" className="btn btn-warning btn-lg btn-block">
           Add to Cart
         </a>

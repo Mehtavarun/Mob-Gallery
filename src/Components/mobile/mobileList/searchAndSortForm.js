@@ -22,7 +22,7 @@ function SearchAndSortForm() {
         </form>
       </div>
       <div className="col-3">
-        <div class="dropdown">
+        <div className="dropdown">
           <button
             className="btn btn-light border dropdown-toggle"
             type="button"

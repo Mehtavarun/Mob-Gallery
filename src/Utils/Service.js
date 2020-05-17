@@ -1,5 +1,6 @@
-export async function request(method = 'GET', url, body = {}) {
-  const res = await fetch(url, getHttpConfig(method, body));
+import { API_URL } from './util';
+export async function request(method = 'GET', url, body) {
+  const res = await fetch(API_URL + url, getHttpConfig(method, body));
   return await getResponse(res);
 }
 

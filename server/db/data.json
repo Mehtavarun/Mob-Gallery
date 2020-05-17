@@ -1,5 +1,5 @@
 {
-  "user": [
+  "users": [
     {
       "id": 1,
       "usename": "user",
@@ -7,8 +7,8 @@
     },
     {
       "id": 2,
-      "usename": "user1",
-      "password": "user1"
+      "usename": "john",
+      "password": "john"
     }
   ],
   "mobiles":[

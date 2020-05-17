@@ -5,7 +5,12 @@ function Pagination() {
     <nav aria-label="Page navigation">
       <ul className="pagination justify-content-center mt-5 mb-5">
         <li className="page-item disabled">
-          <a className="page-link" href="#" tabindex="-1" aria-disabled="true">
+          <a
+            className="page-link"
+            href="#"
+            // tabindex={'-1'}
+            aria-disabled="true"
+          >
             Previous
           </a>
         </li>
