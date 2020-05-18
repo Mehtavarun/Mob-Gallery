@@ -1,42 +1,45 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Pagination(props) {
-  const { count, activePage } = props;
+  const { count, activePage = 1 } = props;
+  const totalPages = Math.ceil(count / 10);
 
   return (
     <nav aria-label="Page navigation">
       <ul className="pagination justify-content-center mt-5 mb-5">
-        <li className="page-item disabled">
-          <a
+        <li className={`page-item ${activePage - 1 === 0 && 'disabled'}`}>
+          <Link
             className="page-link"
-            href="#"
-            tabIndex={'-1'}
-            aria-disabled="true"
+            to={`/mobile-phones?page=${activePage - 1}`}
+            tabIndex="-1"
           >
             Previous
-          </a>
+          </Link>
         </li>
-        {[...Array(Math.ceil(count / 10))].map((i, page) => {
+        {[...Array(totalPages)].map((num, index) => {
           return (
             <li
-              className={`page-item${page + 1 === activePage && ' active'}`}
+              className={`page-item${index + 1 === activePage && ' active'}`}
               aria-current="page"
-              key={page + 1}
+              key={index + 1}
             >
               <Link
                 className="page-link"
-                to={`/mobile-phones?page=${page + 1}`}
+                to={`/mobile-phones?page=${index + 1}`}
               >
-                {page + 1} <span className="sr-only">(current)</span>
+                {index + 1} <span className="sr-only">(current)</span>
               </Link>
             </li>
           );
         })}
-        <li className="page-item">
-          <a className="page-link" href="#">
+        <li className={`page-item ${activePage === totalPages && 'disabled'}`}>
+          <Link
+            className="page-link"
+            to={`/mobile-phones?page=${activePage + 1}`}
+          >
             Next
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

@@ -5,7 +5,7 @@ import SearchAndSortForm from './searchAndSortForm';
 import { request } from '../../../Utils/Service';
 import useDebounce from '../../../Utils/debounce';
 
-function MobileList(props) {
+function MobileList() {
   const [mobiles, setMobiles] = useState([]);
   const [order, setOrder] = useState('asc');
   const [searchText, setSearchText] = useState('');
