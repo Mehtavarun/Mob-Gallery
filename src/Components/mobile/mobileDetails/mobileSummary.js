@@ -1,50 +1,89 @@
-import React from 'react';
-import img from '../../../assets/images/Apple-iPhone-11-Pro-Silver-64-GB.jpg';
+import React, { useContext, Fragment, useEffect, useState } from 'react';
+import MobileContext from './context';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem } from '../../../Actions/cart';
+import { isLoggedInUser } from '../../../Utils/util';
 
 function MobileSummary() {
+  const mobile = useContext(MobileContext);
+  const [addedToCart, setAddedToCart] = useState(false);
+  const dispatch = useDispatch();
+  const cart = useSelector(state => state.cart);
+
+  useEffect(() => {
+    if (cart.items.findIndex(item => item.id === mobile.id) > -1) {
+      setAddedToCart(true);
+    }
+  }, []);
+
+  function addItemToCart() {
+    dispatch(
+      addItem(cart.items, {
+        id: mobile.id,
+        image: mobile.image,
+        name: mobile.name,
+        currency: mobile.currency,
+        quantity: 1
+      })
+    );
+    setAddedToCart(true);
+  }
+
   return (
-    <div className="row justify-content-center mt-5 align-items-center">
-      <div className="col-md-4 text-center sticky-top">
-        <img src={img} height="400" alt="image-name" />
-      </div>
-      <div
-        className="col-md-6 text-break text-monospace"
-        style={{ height: '440px' }}
-      >
-        <h1>Iphone 11</h1>
-        <h3 className="text-danger">
-          <b>$349.33</b>
-        </h3>
-        <h5 className="text-primary">
-          <b>Black</b>
-        </h5>
-        <br />
-        <h6 className="text-muted">Free Delivery</h6>
-        <div className="d-inline">Delivered by:</div>
-        <div className="d-inline">
-          <b> 23-05-2020</b>
-        </div>
-        <br />
-        <br />
-        <h6>
-          <b>Specifications</b>
-        </h6>
-        <ul>
-          <li>64GB Internal Memory</li>
-          <li>8GB RAM</li>
-          <li>6.7-inch HD Retina display</li>
-          <li>12MP camera with 1080p video and 4.2MP HD camera</li>
-          <li>Up to 10 hours of battery life</li>
-          <li>Two speaker audio</li>
-          <li>Lightning connector for charging and accessories</li>
-          <li>802.11ac Wi-Fi with MIMO</li>
-        </ul>
-      </div>
-      <div className="col-md-2 text-center sticky-top">
-        <a href="#" className="btn btn-warning btn-lg btn-block">
-          Add to Cart
-        </a>
-      </div>
+    <div className="row justify-content-center mt-4 align-items-center">
+      {mobile.hasOwnProperty('image') && (
+        <Fragment>
+          <div className="col-md-4 text-center sticky-top">
+            <img
+              src={require(`../../../assets/images/${mobile.image}`)}
+              height="400"
+              alt="image-name"
+            />
+          </div>
+          <div
+            className="col-md-6 text-break text-monospace"
+            style={{ height: '440px' }}
+          >
+            <h1>{mobile.name}</h1>
+            <h3 className="text-danger">
+              <b>{mobile.currency + mobile.price}</b>
+            </h3>
+            <h5 className="text-primary">
+              <b>Quantity Available: {mobile.quantity} </b>
+            </h5>
+            <br />
+            <h6 className="text-muted">Free Delivery</h6>
+            <div className="d-inline">Delivered by:</div>
+            <div className="d-inline">
+              <b> 23-05-2020</b>
+            </div>
+            <br />
+            <br />
+            <h6>
+              <b>Specifications</b>
+            </h6>
+            <ul>
+              {mobile.specifications.map((specification, i) => (
+                <li key={i}>{specification}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="col-md-2 text-center sticky-top">
+            {addedToCart ? (
+              <button className="btn btn-warning btn-md disabled" disabled>
+                Added To Cart
+              </button>
+            ) : (
+              <button
+                className="btn btn-warning btn-lg btn-block"
+                onClick={addItemToCart}
+              >
+                Add to Cart
+              </button>
+            )}
+          </div>
+        </Fragment>
+      )}
     </div>
   );
 }
