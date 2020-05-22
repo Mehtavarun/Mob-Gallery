@@ -14,10 +14,14 @@ function Login(props) {
   let [formErr, setFormErr] = useState({ valid: false, error: '' });
   let [disabledBtn, setDisabledBtn] = useState(false);
   const dispatch = useDispatch();
+  const [returnUrl, setReturnUrl] = useState('');
 
   useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const url = urlParams.get('returnUrl') || 'mobile-phones';
+    setReturnUrl(url);
     if (isLoggedInUser()) {
-      history.push('mobile-phones');
+      history.push(url);
     }
   }, []);
 
@@ -55,8 +59,22 @@ function Login(props) {
       if (response.status === 200 && body) {
         dispatch({ type: SET_USER, value: body });
         localStorage.setItem('loggedInUser', username.value);
-        history.push('/mobile-phones');
+        history.push(returnUrl);
+      } else {
+        setFormErr('Invalid username/password');
+        setDisabledBtn(true);
       }
+    } else {
+      setUsername({
+        value: username.value,
+        valid: false,
+        error: '*Required Username'
+      });
+      setPassword({
+        value: password.value,
+        valid: false,
+        error: '*Required password'
+      });
     }
   }
 

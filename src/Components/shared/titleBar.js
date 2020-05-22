@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { isLoggedInUser } from '../../Utils/util';
@@ -7,14 +7,29 @@ import cart from '../../assets/icons/black-cart.png';
 function TitleBar() {
   let user = useSelector(state => state.user);
   let [isUserLoggedIn, setIsLoggedInUser] = useState(false);
+  const [showUserDropdown, toggleUserDropdown] = useState(false);
+  const [username, setUsername] = useState(user.username);
+  const ref = useRef(false);
 
   useEffect(() => {
     if (isLoggedInUser()) {
       setIsLoggedInUser(true);
+      setUsername(localStorage.getItem('loggedInUser'));
     } else {
       setIsLoggedInUser(false);
     }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   });
+
+  function handleClickOutside(event) {
+    if (ref.current && !ref.current.contains(event.target)) {
+      toggleUserDropdown(false);
+    }
+  }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link to="/" className="navbar-brand mg-10 ml-4">
@@ -23,18 +38,19 @@ function TitleBar() {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto ml-3"></ul>
         {isUserLoggedIn ? (
-          <div className="dropdown">
+          <div className="dropdown mr-3" ref={ref}>
             <h4
               className="text-monospace dropdown-toggle font-weight-normal my-2 my-sm-0 mr-4 addPointer"
               id="dropdownMenuButton"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
+              onClick={() => toggleUserDropdown(!showUserDropdown)}
             >
-              Username
+              {username}
             </h4>
             <div
-              className="dropdown-menu d-block"
+              className={`dropdown-menu ${showUserDropdown && 'd-block'}`}
               aria-labelledby="dropdownMenuButton"
             >
               <Link className="dropdown-item" to="/logout">

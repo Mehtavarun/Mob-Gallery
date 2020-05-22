@@ -17,8 +17,7 @@ function Routes() {
 
   useEffect(() => {
     userHasAuthenticated(isLoggedInUser());
-    userHasAuthenticated(true);
-  }, []);
+  });
 
   return (
     <Suspense fallback={<Loader />}>
@@ -64,7 +63,11 @@ function AuthenticatedRoute({
     <Route
       {...props}
       render={() =>
-        isAuthenticated ? <Component /> : <Redirect to="/login" />
+        isAuthenticated ? (
+          <Component />
+        ) : (
+          <Redirect to={`/login?returnUrl=${props.path}`} />
+        )
       }
     />
   );

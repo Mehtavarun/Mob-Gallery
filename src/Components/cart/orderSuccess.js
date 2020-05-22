@@ -5,9 +5,15 @@ function OrderSuccess() {
   return (
     <Fragment>
       <h2 className="text-center ">
-        Successfully placed order with id: {Math.random() * 1000000}
+        <br />
+        <br />
+        Successfully placed order with id: {Math.ceil(Math.random() * 1000000)}
+        <br />
+        <br />
+        <Link className="text-center" to="/mobile-phones">
+          <h3>Continue Shopping</h3>
+        </Link>
       </h2>
-      ;<Link to="/mobile-phones">Continue Shopping</Link>
     </Fragment>
   );
 }
