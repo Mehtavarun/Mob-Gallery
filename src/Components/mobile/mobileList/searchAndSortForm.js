@@ -51,6 +51,7 @@ function SearchAndSortForm(props) {
           <button
             className="btn btn-outline-success my-2 my-sm-0"
             type="submit"
+            data-testid="searchButton"
           >
             Search
           </button>
@@ -62,6 +63,7 @@ function SearchAndSortForm(props) {
             className="btn btn-light border dropdown-toggle"
             type="button"
             id="dropdownMenuButton"
+            data-testid="menuBtn"
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
@@ -76,6 +78,7 @@ function SearchAndSortForm(props) {
             <button
               className="dropdown-item"
               tpye="button"
+              data-testid="ascBtn"
               onClick={() => handleOrder('asc')}
             >
               {orderDropdown.asc}
@@ -83,6 +86,7 @@ function SearchAndSortForm(props) {
             <button
               className="dropdown-item"
               tpye="button"
+              data-testid="descBtn"
               onClick={() => handleOrder('desc')}
             >
               {orderDropdown.desc}

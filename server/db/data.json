@@ -2,13 +2,8 @@
   "users": [
     {
       "id": 1,
-      "usename": "user",
-      "password": "user"
-    },
-    {
-      "id": 2,
-      "usename": "john",
-      "password": "john"
+      "usename": "Ammy",
+      "password": "ammy"
     }
   ],
   "mobiles":[

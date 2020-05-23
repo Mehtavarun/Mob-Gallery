@@ -41,7 +41,10 @@
   "devDependencies": {
     "@welldone-software/why-did-you-render": "^4.2.1",
     "concurrently": "^5.2.0",
+    "enzyme": "^3.11.0",
     "json-server": "^0.16.1",
-    "redux-logger": "^3.0.6"
+    "react-test-renderer": "^16.13.1",
+    "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.4"
   }
 }
