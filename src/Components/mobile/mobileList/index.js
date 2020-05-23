@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import MobileCard from './mobileCard';
 import Pagination from './pagination';
 import SearchAndSortForm from './searchAndSortForm';
-import { request } from '../../../Utils/Service';
 import useDebounce from '../../../Utils/debounce';
+import { useSelector, useDispatch } from 'react-redux';
+import { setMobilesAsync } from '../../../Actions/mobiles';
 
 function MobileList() {
-  const [mobiles, setMobiles] = useState([]);
+  const { mobiles, count } = useSelector(state => state.mobiles);
+  const dispatch = useDispatch();
   const [order, setOrder] = useState('asc');
   const [searchText, setSearchText] = useState('');
-  const [count, setCount] = useState(0);
   const debouncedSearchText = useDebounce(searchText, 500);
   const urlParams = new URLSearchParams(window.location.search);
   const pageParam = urlParams.get('page');
@@ -25,12 +26,7 @@ function MobileList() {
   }, [order, debouncedSearchText, window.location.search]);
 
   async function setMobileList(searchText = '') {
-    const mobileList = await request(
-      'GET',
-      `/mobiles?_page=${page}&_limit=10&_sort=price&_order=${order}&q=${searchText}`
-    );
-    setCount(mobileList.count);
-    setMobiles(mobileList.body);
+    dispatch(setMobilesAsync(page, order, searchText));
   }
 
   function handleOrder(order) {
