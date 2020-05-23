@@ -4,7 +4,6 @@ import Loader from './Components/shared/loader';
 import TitleBar from './Components/shared/titleBar';
 import Cart from './Components/cart';
 import { isLoggedInUser } from './Utils/util';
-import OrderSuccess from './Components/cart/orderSuccess';
 
 const Login = lazy(() => import('./Components/user/login'));
 const Logout = lazy(() => import('./Components/user/logout'));
@@ -36,18 +35,7 @@ function Routes() {
           path="/mobile/:id"
           render={props => <MobileDetails match={props.match} />}
         />
-        <AuthenticatedRoute
-          exact
-          path="/cart"
-          component={Cart}
-          isAuthenticated={isAuthenticated}
-        />
-        <AuthenticatedRoute
-          exact
-          path="/order-success"
-          component={OrderSuccess}
-          isAuthenticated={isAuthenticated}
-        />
+        <Route exact path="/cart" render={() => <Cart />} />
         <Route path="**" render={() => <NotFound />} />
       </Switch>
     </Suspense>

@@ -5,12 +5,14 @@ import CartItem from './cartItem';
 import { Link, useHistory } from 'react-router-dom';
 import { editItem, setCartProperty, resetCart } from '../../Actions/cart';
 import { request } from '../../Utils/Service';
+import { isLoggedInUser } from '../../Utils/util';
 
 function Cart() {
   const { items, currency } = useSelector(state => state.cart);
   const dispatch = useDispatch();
   const [mobiles, setMobiles] = useState([]);
   const [price, setPrice] = useState(0);
+  const [orderPlaced, toggleOrderPlaced] = useState(false);
   const history = useHistory();
 
   function updateItem(item) {
@@ -59,8 +61,12 @@ function Cart() {
   }
 
   function handlePlaceOrder() {
-    dispatch(resetCart());
-    history.push('/order-success');
+    if (isLoggedInUser()) {
+      toggleOrderPlaced(true);
+      dispatch(resetCart());
+    } else {
+      history.push('/login?returnUrl=/cart');
+    }
   }
 
   return (
@@ -68,6 +74,7 @@ function Cart() {
       className="container text-monospace mt-5 border border-dark bg-light"
       style={{ width: '48rem', padding: '0rem' }}
     >
+      {orderPlaced && <OrderSuccess />}
       <nav className="navbar navbar-dark bg-dark mb-3">
         <span className="navbar-brand mb-0 h1">
           <img className="mr-3" src={cartIcon} heigth="28" width="28" />
@@ -113,6 +120,39 @@ const EmptyCart = () => {
         <h6 className="text-center">Let's shop</h6>
       </Link>
     </Fragment>
+  );
+};
+
+const OrderSuccess = () => {
+  return (
+    <div
+      className="modal fade show d-block focusedModal"
+      id="exampleModal"
+      tabIndex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+    >
+      <div className="modal-dialog modal-dialog-centered">
+        <div className="modal-content bg-light">
+          <div className="modal-header">
+            <h5 className="modal-title" id="orderModal">
+              <b>
+                Successfully placed order with id:{' '}
+                {Math.ceil(Math.random() * 1000000)}
+              </b>
+              <br />
+            </h5>
+          </div>
+          <div className="body">
+            <Link className="text-center" to="/mobile-phones">
+              <br />
+              <h5>Let's Shop more</h5>
+              <br />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

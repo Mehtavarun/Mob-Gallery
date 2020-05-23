@@ -7,7 +7,7 @@ function Logout() {
   useEffect(() => {
     localStorage.removeItem('loggedInUser');
     resetUser();
-    history.replace('/login');
+    history.replace('/mobile-phones');
   }, []);
   return <Fragment />;
 }
