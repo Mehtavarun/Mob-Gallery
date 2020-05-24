@@ -2,7 +2,6 @@ import React, { useState, Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from '../../../Actions/cart';
-import { isLoggedInUser } from '../../../Utils/util';
 
 function MobileCard(props) {
   const { id, image, name, price, currency } = props.mobile;
