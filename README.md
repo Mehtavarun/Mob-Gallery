@@ -1,16 +1,26 @@
+# MOB-GALLERY
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For UI: Bootstrap version 4 is used [bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 
-## Available Scripts
+## To run the app
 
-In the project directory, you can run:
+1. Clone the repo.
+2. `npm install` inside the folder
+3. `npm run dev` will run the backend and frontend server concurrently;
 
-### `npm start`
+If you only want to run Frontend than run:
+`npm start`
+
+If only backend then run 
+`npm run server`
+
+### `npm run dev`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Server will run by default on port 3001. If you want to change, change it inside 'packge.json' and change the port inside  ./src/Components/Utils/utils
 
 ### `npm test`
 
